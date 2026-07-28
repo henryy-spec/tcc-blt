@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crnocide</title>
+    <title>Cronocide</title>
     <link rel="stylesheet" href="Css/cronocide.css">
 </head>
 <body>
@@ -34,6 +34,22 @@
   
  <h1 class="lugar">O jogo Cronocide é um jogo com foco na viagem temporal</h1>
     <h3 class="posição">Em um mundo onde a viagem no tempo se tornou realidade, aventure-se por épocas marcantes da história, enfrente inimigos espalhados pelo tempo e restaure o fluxo temporal para salvar a humanidade — mas lembre-se: o passado sempre volta. </h3>
-    <button> Jogue agora a nossa demo! <a href="#"></a></button>
+    <button onclick="abrirJogo()">Jogue agora a nossa demo!</button>
+
+<div id="game-container" style="display:none; margin-top:30px;">
+    <iframe
+        src="jogo/Chronoside.html"
+        width="1280"
+        height="720"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<script>
+function abrirJogo() {
+    document.getElementById("game-container").style.display = "block";
+}
+</script>
 </body>
 </html>

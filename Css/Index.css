@@ -1,0 +1,502 @@
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#020617;
+    color:white;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+
+    padding:0 50px;
+
+    background:rgba(0,0,0,.95);
+    border-bottom:1px solid #00aaff;
+
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    color:#00aaff;
+    font-size:32px;
+    font-weight:bold;
+
+    justify-self:start;
+}
+
+#blt{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    padding:10px 15px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00aaff;
+    background:rgba(0,170,255,0.1);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+.login-btn{
+    justify-self:end;
+
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;}
+    /* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:120px 80px 50px;
+
+    background:
+    radial-gradient(circle at center,
+    #00154f 0%,
+    #020617 70%);
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text h1{
+    font-size:70px;
+    margin-bottom:20px;
+    line-height:1;
+}
+
+.hero-text span{
+    color:#00aaff;
+}
+
+.hero-text p{
+    font-size:22px;
+    color:#cbd5e1;
+    margin-bottom:40px;
+}
+
+/* PESQUISA */
+
+.search{
+    display:flex;
+    gap:10px;
+}
+
+.search input{
+
+    width:450px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    color:white;
+
+    box-shadow:0 0 10px #00aaff;
+}
+
+.search button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+}
+
+.server{
+
+    width:450px;
+    height:450px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(145deg,
+    #00154f,
+    #0f172a);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:150px;
+
+    box-shadow:
+    0 0 20px #00aaff,
+    0 0 50px #00aaff;
+}
+
+/* ==========================
+   TÍTULOS
+========================== */
+
+.section-title{
+    text-align:center;
+    color:#00aaff;
+    margin-bottom:50px;
+    font-size:42px;
+}
+
+/* ==========================
+   JOGOS
+========================== */
+
+.games{
+    padding:100px 50px;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.card{
+
+    background:#0f172a;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid #00aaff;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 20px #00aaff;
+}
+
+.card img{
+
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-info{
+    padding:20px;
+}
+
+.card-info h3{
+    margin-bottom:10px;
+}
+
+/* ==========================
+   DESTAQUE
+========================== */
+
+.featured{
+    padding:50px;
+}
+
+.banner{
+
+    height:400px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:2px solid #00aaff;
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.banner-text{
+
+    position:absolute;
+
+    left:50px;
+    top:50px;
+}
+
+.banner-text h2{
+    font-size:60px;
+}
+
+/* ==========================
+   PLANOS
+========================== */
+
+.plans{
+
+    padding:100px 50px;
+}
+
+.plan-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.plan{
+
+    background:#0f172a;
+
+    border:2px solid #00aaff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.plan h3{
+    color:#00aaff;
+}
+
+.price{
+
+    font-size:45px;
+
+    margin:20px 0;
+}
+
+.plan ul{
+    list-style:none;
+}
+
+.plan li{
+    margin:15px 0;
+}
+
+.plan button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:black;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-top:1px solid #00aaff;
+}
+
+/* ==========================
+   MODAL LOGIN
+========================== */
+
+#modalLogin{
+
+    border:none;
+    background:transparent;
+}
+
+#modalLogin::backdrop{
+
+    background:rgba(0,0,0,.8);
+
+    backdrop-filter:blur(5px);
+}
+
+.modal-content{
+
+    width:400px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    background:#0f172a;
+
+    border:2px solid #00aaff;
+
+    box-shadow:
+    0 0 20px #00aaff;
+
+    position:fixed;
+
+    right:30px;
+    top:30%;
+
+    transform:translateY(-50%);
+}
+
+.modal-content h2{
+
+    text-align:center;
+
+    color:#00aaff;
+
+    margin-bottom:25px;
+}
+.neymar {
+position: relative;
+font-size: 26px;
+color:#ffffff;
+}
+
+.modal-content input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#1e293b;
+
+    color:white;
+}
+
+.modal-content button[type="submit"]{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#2563eb;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.fechar{
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+}
+html{
+    scroll-behavior:smooth;
+}
+
+#inicio,
+#jogos,
+#planos,
+#contato{
+    scroll-margin-top:100px;
+}
+.cadastro {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    top: 1px;             /* empurra 10px para baixo */
+    margin: 30px 0 25px;
+    display: block;
+}

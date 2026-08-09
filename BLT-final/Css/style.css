@@ -1,0 +1,145 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* FUNDO */
+body {
+  background: linear-gradient(
+    to right,
+    #000000 0%,
+    #0a0f2c 50%,
+    #000814 100%
+  );
+
+  color: #ffffff;
+}
+
+#menu {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  box-shadow: 0 0 10px #00eaff;
+  height: 100px;
+  
+}
+
+#menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  text-align: center;
+  position: fixed;
+  padding-bottom: 20px;
+  
+}
+.blue-light{
+  margin-left: 120px;
+  margin-top: 15px;
+  font-size: 30px;
+  font-family: montserrat;
+  color: #00eaff;
+}
+
+#blt {
+  width: 60px;
+  margin-right: 490px;
+  margin-left: 53px;
+  
+}
+
+#menu a {
+  color: #00eaff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#menu a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+/* CONTEÚDO PRINCIPAL */
+#assinatura {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  
+}
+
+/* TÍTULOS */
+.introdução {
+  font-size: 1.8em;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaffce;
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.generos {
+  color: #32c9f7f6;
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* TEXTO */
+.jogar {
+  margin: 20px 0;
+  color: #cfd8ff;
+}
+
+/* INPUT */
+input[type="email"] {
+  padding: 12px;
+  width: 250px;
+  border: 2px solid #00eaff;
+  border-radius: 8px;
+  background-color: #000814;
+  color: white;
+  outline: none;
+  box-shadow: 0 0 8px #00eaff inset;
+}
+
+/* BOTÃO */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #00eaff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00bcd4;
+  box-shadow: 0 0 15px #00eaff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  #menu ul {
+    flex-direction: column;
+  }
+
+  input {
+    width: 90%;
+  }
+}
+
+a nav li a:hover{
+    transition: 0,5s;
+    border-inline: 2px solid aliceblue;
+}
+
+div {
+  padding-left: 50px;
+  padding-right: 50px;
+}

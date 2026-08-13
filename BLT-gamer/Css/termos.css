@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('design-system.css');
+
+.bl-simple-header{
+  width:100%; padding:22px; text-align:center; position:sticky; top:0; z-index:50;
+  background:rgba(5,8,16,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--surface-border);
+}
+.bl-simple-header .logo{ color:var(--primary-2); font-size:26px; font-weight:800; letter-spacing:2px; }
+
+.container{
+  width:90%; max-width:1000px; margin:50px auto; padding:46px;
+  background:var(--surface); border:1px solid var(--surface-border); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-md); animation: bl-slide-up var(--t-slow);
+}
+
+.container h1{ text-align:center; color:var(--text-0); font-size:40px; margin-bottom:10px; }
+.atualizacao{ text-align:center; color:var(--text-2); margin-bottom:40px; }
+
+section{ margin-bottom:36px; }
+section h2{ color:var(--primary-2); margin-bottom:14px; border-left:4px solid var(--primary); padding-left:12px; font-size:24px; }
+section h3{ color:var(--accent-2); margin:20px 0 8px; font-size:18px; }
+section p{ text-align:justify; color:var(--text-1); font-size:16px; }
+
+.aceite{ margin-top:44px; padding-top:30px; border-top:1px solid var(--surface-border); display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.aceite input{ width:18px; height:18px; accent-color:var(--primary); cursor:pointer; }
+.aceite label{ color:var(--text-0); font-size:15px; }
+.aceite a{ display:inline-block; margin-top:0; }
+.aceite button{
+  display:inline-flex; align-items:center; gap:8px; margin-top:14px; width:auto; padding:13px 26px; border:none;
+  border-radius:var(--r-pill); background:linear-gradient(135deg,var(--primary),var(--primary-dim)); color:#fff;
+  font-size:15px; font-weight:700; cursor:pointer; transition: transform var(--t-fast), box-shadow var(--t-fast);
+  box-shadow: var(--shadow-glow);
+}
+.aceite button:hover{ transform:translateY(-2px); }
+.aceite button[disabled]{ opacity:.45; cursor:not-allowed; transform:none; box-shadow:none; }
+
+.bl-footer-simple{ margin-top:50px; padding:24px; text-align:center; color:var(--text-2); border-top:1px solid var(--surface-border); }
+
+@media (max-width:900px){
+  .container{ width:95%; padding:30px; }
+  .container h1{ font-size:32px; }
+  section h2{ font-size:21px; }
+}
+@media (max-width:600px){
+  .container{ margin:24px auto; padding:22px; }
+  .container h1{ font-size:27px; }
+  section h2{ font-size:19px; }
+  section h3{ font-size:16px; }
+  section p{ font-size:14.5px; }
+  .aceite button{ width:100%; justify-content:center; }
+}

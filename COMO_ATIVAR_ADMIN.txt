@@ -1,0 +1,26 @@
+PAINEL ADMIN — BLUE LIGHT GAMER
+
+1) Banco novo:
+   Importe o blt.sql atualizado no phpMyAdmin.
+
+2) Banco que já existe:
+   Importe/executa o arquivo admin_migration.sql no banco blt.
+
+3) Tornar sua conta administradora:
+   No phpMyAdmin, execute:
+   UPDATE usuarios SET is_admin = 1 WHERE email = 'SEU_EMAIL_AQUI';
+   Troque pelo e-mail da sua conta.
+
+4) Acesse:
+   http://localhost/BlueLight/admin/
+
+5) E-mail de renovação:
+   O botão do dashboard usa a função mail() do PHP.
+   Em hospedagem real, configure o remetente e SMTP conforme a hospedagem.
+   Em XAMPP/localhost, mail() normalmente precisa de configuração SMTP para entregar mensagens de verdade.
+   Edite php/config_email.php e troque:
+   BLT_EMAIL_REMETENTE
+   BLT_URL_PHP
+   pelos dados reais do seu domínio.
+
+O painel não mostra dados de cartão. O projeto registra apenas o método escolhido (PIX ou cartão), plano, valor, usuário e data.

@@ -1,0 +1,56 @@
+@import url('../Css/design-system.css');
+
+.bl-admin-page{padding:calc(var(--header-h) + 36px) 0 60px;min-height:100vh}
+.bl-admin-header{position:fixed;inset:0 0 auto;height:var(--header-h);z-index:1000;background:rgba(5,8,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--surface-border)}
+.bl-admin-inner{max-width:1180px;height:100%;margin:auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.bl-admin-brand{display:flex;align-items:center;gap:9px;color:var(--text-0);font-weight:700;text-decoration:none}
+.bl-admin-brand img{width:34px;height:34px;object-fit:contain}
+.bl-admin-brand span{font-size:11px;color:var(--text-2);font-weight:600;border-left:1px solid var(--surface-border);padding-left:9px}
+.bl-admin-header nav{display:flex;align-items:center;gap:8px}
+.bl-admin-header nav a{color:var(--text-1);text-decoration:none;font-size:13px;padding:8px 11px;border-radius:var(--r-pill)}
+.bl-admin-header nav a:hover{background:var(--surface-strong);color:var(--text-0)}
+.bl-admin-icon{width:36px;height:36px;border:1px solid var(--surface-border);border-radius:50%;background:var(--surface);color:var(--text-0);cursor:pointer}
+
+.bl-admin-title{margin-bottom:22px}
+.bl-admin-kicker{margin:0 0 5px;color:var(--primary);font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.bl-admin-title h1{margin:0;font-size:30px}
+.bl-admin-title p:last-child{margin:5px 0 0;color:var(--text-2);font-size:14px}
+
+.bl-admin-alert{padding:12px 15px;border:1px solid var(--surface-border);border-radius:var(--r-md);margin-bottom:16px;font-size:13px}
+.bl-admin-alert.sucesso{border-color:rgba(74,222,128,.28);color:#86efac}
+.bl-admin-alert.erro{border-color:rgba(248,113,113,.28);color:#fca5a5}
+
+.bl-admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.bl-admin-stat{background:var(--surface);border:1px solid var(--surface-border);border-radius:var(--r-lg);padding:17px}
+.bl-admin-stat span{display:block;color:var(--text-2);font-size:12px}
+.bl-admin-stat strong{display:block;margin:7px 0 2px;font-size:22px}
+.bl-admin-stat small{color:var(--text-2);font-size:11px}
+
+.bl-admin-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(320px,1fr);gap:14px}
+.bl-admin-card{background:var(--surface);border:1px solid var(--surface-border);border-radius:var(--r-lg);overflow:hidden}
+.bl-admin-card-head{padding:17px 18px;border-bottom:1px solid var(--surface-border)}
+.bl-admin-card-head h2{margin:0;font-size:16px}
+.bl-admin-card-head p{margin:4px 0 0;color:var(--text-2);font-size:12px}
+
+.bl-table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:12px 13px;text-align:left;border-bottom:1px solid var(--surface-border);white-space:nowrap}
+th{color:var(--text-2);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+td strong{display:block;font-size:12px}
+td small{display:block;color:var(--text-2);margin-top:3px;font-size:10.5px}
+.bl-admin-status{display:inline-block;font-weight:700}
+.bl-admin-status.on{color:#4ade80}.bl-admin-status.soon{color:#facc15}.bl-admin-status.off{color:#f87171}
+.bl-reminder-form button{width:32px;height:32px;border:1px solid var(--surface-border);background:transparent;color:var(--text-1);border-radius:8px;cursor:pointer}
+.bl-reminder-form button:hover{background:var(--surface-strong);color:var(--text-0)}
+.bl-reminder-form button:disabled{opacity:.6;cursor:wait}
+
+.bl-payment-list{padding:4px 16px}
+.bl-payment-item{display:flex;justify-content:space-between;gap:12px;padding:14px 2px;border-bottom:1px solid var(--surface-border)}
+.bl-payment-item:last-child{border-bottom:0}
+.bl-payment-main strong,.bl-payment-side strong{display:block;font-size:12px}
+.bl-payment-main small,.bl-payment-side small{display:block;color:var(--text-2);font-size:10.5px;margin-top:4px}
+.bl-payment-side{text-align:right}
+.bl-admin-empty{padding:25px 2px;color:var(--text-2);font-size:13px}
+
+@media(max-width:900px){.bl-admin-stats{grid-template-columns:repeat(2,1fr)}.bl-admin-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.bl-admin-page{padding-top:calc(var(--header-h) + 24px)}.bl-admin-stats{grid-template-columns:1fr 1fr}.bl-admin-brand span{display:none}.bl-admin-header nav a{font-size:0}.bl-admin-header nav a i{font-size:14px}}

@@ -8,13 +8,15 @@
 
     <title>Blue Light | Termos de Uso</title>
 
+    <link rel="stylesheet" href="Css/design-system.css">
     <link rel="stylesheet" href="Css/termos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<header>
+<header class="bl-simple-header">
 
     <div class="logo">
         BLUE LIGHT
@@ -210,27 +212,25 @@
 
     <div class="aceite">
 
-        <input type="checkbox" id="aceito">
+        <input type="checkbox" id="aceito" onchange="document.getElementById('btnContinuar').disabled = !this.checked;">
 
         <label for="aceito">
 
             Li e concordo com os Termos de Uso e com a Política de Privacidade.
 
         </label>
-        <a href="Index.html">
-            <button>
-
-            Continuar
-
-             </button>
+        <a href="Index.php" id="linkContinuar">
+            <button id="btnContinuar" disabled>
+                Continuar <i class="fa-solid fa-arrow-right"></i>
+            </button>
 
         </a>
-       
+
     </div>
 
 </main>
 
-<footer>
+<footer class="bl-footer-simple">
 
     <p>
 
@@ -239,6 +239,12 @@
     </p>
 
 </footer>
+
+<script>
+document.getElementById('linkContinuar').addEventListener('click', function(e){
+    if (document.getElementById('btnContinuar').disabled) { e.preventDefault(); }
+});
+</script>
 
 </body>
 

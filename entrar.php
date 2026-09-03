@@ -16,7 +16,7 @@ $flash = obterFlash();
 <link rel="stylesheet" href="Css/design-system.css">
 <link rel="stylesheet" href="Css/login.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<title>Cadastro | Blue Light</title>
+<title>Entrar | Blue Light</title>
 </head>
 <body class="bl-auth-body">
 <main class="container">
@@ -24,18 +24,13 @@ $flash = obterFlash();
     <img src="img/Logo Blue Light com contorno.png" alt="Logo Blue Light">
     <span>BLUE<b>LIGHT</b></span>
   </div>
-  <h1>Criar conta</h1>
-  <p class="bl-auth-sub">Comece a jogar em poucos segundos.</p>
+  <h1>Bem-vindo de volta</h1>
+  <p class="bl-auth-sub">Entre para acessar sua biblioteca de jogos.</p>
 
   <?php if ($flash): ?><div class="bl-flash <?= e($flash['tipo']) ?> msg" role="status"><?= e($flash['mensagem']) ?></div><?php endif; ?>
 
-  <form action="php/cadastro.php" method="POST" data-bl-loading novalidate>
+  <form action="php/login.php" method="POST" data-bl-loading novalidate>
     <input type="hidden" name="csrf_token" value="<?= e(csrfToken()) ?>">
-
-    <div class="bl-field">
-      <i class="fa-regular fa-user bl-icon"></i>
-      <input placeholder="Seu nome" type="text" name="nome" minlength="2" maxlength="120" required aria-label="Seu nome">
-    </div>
 
     <div class="bl-field">
       <i class="fa-regular fa-envelope bl-icon"></i>
@@ -44,26 +39,16 @@ $flash = obterFlash();
 
     <div class="bl-field">
       <i class="fa-solid fa-lock bl-icon"></i>
-      <input placeholder="Crie sua senha (mín. 8 caracteres)" type="password" name="senha" minlength="8" required aria-label="Senha">
+      <input placeholder="Sua senha" type="password" name="senha" required aria-label="Senha">
       <button type="button" class="bl-toggle-pass" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
     </div>
-
-    <div class="bl-field">
-      <i class="fa-solid fa-lock bl-icon"></i>
-      <input placeholder="Confirme sua senha" type="password" name="confirmar_senha" minlength="8" required aria-label="Confirmar senha">
-      <button type="button" class="bl-toggle-pass" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
-    </div>
-
-    <label class="termos">
-      <input type="checkbox" name="termos" required>
-      <span>Li e aceito os <a href="termos.html" target="_blank">Termos de Uso</a>.</span>
-    </label>
 
     <button type="submit" class="bl-btn bl-btn-primary bl-auth-submit">
-      <span class="bl-spinner"></span><span class="bl-btn-label">Criar conta</span>
+      <span class="bl-spinner"></span><span class="bl-btn-label">Entrar</span>
     </button>
 
-    <a href="entrar.php" class="cadastro">Já tenho uma conta</a>
+    <a href="login.php" class="cadastro">Criar conta</a>
+    <a href="php/recuperarSenha.php" class="cadastro">Esqueci minha senha</a>
   </form>
 </main>
 <script src="Js/app.js"></script>

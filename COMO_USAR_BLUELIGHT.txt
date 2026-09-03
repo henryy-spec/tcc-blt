@@ -1,0 +1,43 @@
+BLUELIGHT — VERSÃO CORRIGIDA
+
+1. Extraia a pasta BlueLight para:
+   C:\xampp\htdocs\BlueLight
+
+2. Mantenha o seu .env dentro de C:\xampp\htdocs\BlueLight\
+   (o .env não foi incluído neste ZIP por segurança).
+
+3. No .env, confirme:
+   BLT_SMTP_HOST=smtp.gmail.com
+   BLT_SMTP_PORT=587
+   BLT_SMTP_ENCRYPTION=tls
+   BLT_SMTP_USERNAME=seuemail@gmail.com
+   BLT_SMTP_PASSWORD=sua_senha_de_app
+   BLT_EMAIL_FROM=seuemail@gmail.com
+   BLT_EMAIL_FROM_NAME=BlueLight
+   BLT_URL_BASE=http://localhost/BlueLight
+
+4. Inicie Apache e MySQL no XAMPP.
+
+5. Site:
+   http://localhost/BlueLight/
+
+6. Teste de pagamento:
+   http://localhost/BlueLight/pagamento.php
+
+7. Admin:
+   http://localhost/BlueLight/admin/
+
+8. Teste SMTP:
+   entre no Admin e use a opção de teste SMTP.
+
+ALTERAÇÕES DESTA VERSÃO
+- Projeto renomeado para BlueLight.
+- Removida a duplicação do Index.php que fazia o conteúdo/modal aparecer duas vezes.
+- Modal de login refinado, mantendo a identidade visual existente.
+- Ícone de senha usa Font Awesome; nenhum emoji de cadeado é usado no modal.
+- Cursor nativo do Windows permanece visível em todo o site, inclusive dentro de modais.
+- Campos mantêm cursor de texto/caret visível.
+- PHPMailer + Gmail SMTP continua sendo usado pelos e-mails.
+- Link de recuperação de senha foi corrigido para usar a URL base do projeto.
+- Lembrete de renovação aponta para pagamento.php na mesma instalação.
+- .env não é incluído no pacote.

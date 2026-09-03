@@ -1,0 +1,18 @@
+BLT-gamer — CORREÇÃO
+
+Erro principal corrigido:
+Index.php tinha duas chamadas consecutivas a:
+$linha = $stmt->get_result()->fetch_assoc();
+
+A primeira consumia o resultado da consulta. A segunda tentava obter
+novamente o resultado da mesma instrução e terminava em:
+"Call to a member function fetch_assoc() on bool".
+
+Foi mantida apenas uma chamada a get_result()->fetch_assoc().
+
+Também foi corrigido o README_INTEGRACAO.md para usar:
+- pasta BLT-gamer
+- arquivo blt.sql
+
+O restante dos arquivos PHP foi mantido para não alterar funcionalidades
+que não apresentavam erro comprovado na análise estática.

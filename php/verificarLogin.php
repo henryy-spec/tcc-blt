@@ -1,12 +1,4 @@
 <?php
-
-session_start();
-
-if(!isset($_SESSION["id_usuario"])){
-
-    header("Location: login.php");
-    exit();
-
-}
-
-?>
+declare(strict_types=1);
+require_once __DIR__ . '/funcoes.php';
+exigirLogin('../entrar.php');

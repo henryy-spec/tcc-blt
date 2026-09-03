@@ -113,6 +113,50 @@ body {
 		<script>
 const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"Chronoside","experimentalVK":false,"fileSizes":{"Chronoside.pck":164560,"Chronoside.wasm":37900721},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
+
+/*
+ * Controle de áudio da Blue Light.
+ * O jogo usa WebAudio; este pequeno adaptador guarda os AudioContexts
+ * criados pelo Godot e permite suspendê-los/retomá-los pelo botão da
+ * página principal, sem alterar os arquivos do motor do jogo.
+ */
+(function () {
+	const OriginalAudioContext = window.AudioContext;
+	const OriginalWebkitAudioContext = window.webkitAudioContext;
+	const contexts = [];
+	let muted = false;
+
+	function criarWrapper(Original) {
+		if (!Original) return null;
+		function BLWrappedAudioContext() {
+			const ctx = Reflect.construct(Original, Array.from(arguments));
+			contexts.push(ctx);
+			if (muted) ctx.suspend().catch(() => {});
+			return ctx;
+		}
+		BLWrappedAudioContext.prototype = Original.prototype;
+		return BLWrappedAudioContext;
+	}
+
+	if (OriginalAudioContext) window.AudioContext = criarWrapper(OriginalAudioContext);
+	if (OriginalWebkitAudioContext) window.webkitAudioContext = criarWrapper(OriginalWebkitAudioContext);
+
+	function aplicarMute(valor) {
+		muted = !!valor;
+		contexts.forEach(function (ctx) {
+			try {
+				const promise = muted ? ctx.suspend() : ctx.resume();
+				if (promise && promise.catch) promise.catch(() => {});
+			} catch (e) {}
+		});
+	}
+
+	window.addEventListener('message', function (event) {
+		if (!event.data || event.data.type !== 'BL_AUDIO_TOGGLE') return;
+		aplicarMute(event.data.muted);
+	});
+}());
+
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
